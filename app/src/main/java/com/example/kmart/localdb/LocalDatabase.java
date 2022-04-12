@@ -8,8 +8,13 @@ public class LocalDatabase extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "kmart.db";
 
+    private static final String CREATE_PRODUCT_TABLE = "CREATE TABLE " +
+            "product(barcode TEXT PRIMARY KEY, name TEXT NOT NULL, " +
+            "description TEXT NOT NULL, measuring_unit TEXT NOT NULL, " +
+            "supplier_price REAL NOT NULL, sell_price REAL NOT NULL, quantity_available INTEGER NOT NULL);";
 
-    private Context context;
+
+
 
     public LocalDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -17,6 +22,7 @@ public class LocalDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqliteDb) {
+        sqliteDb.execSQL(CREATE_PRODUCT_TABLE);
     }
 
     @Override
