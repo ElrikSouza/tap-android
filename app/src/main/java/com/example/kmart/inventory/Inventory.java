@@ -21,4 +21,8 @@ public class Inventory {
     public Product getOnProductViaBarcode(String barcode) {
         return this.productRepository.getProductByBarcode(barcode);
     }
+
+    public void buyProduct(Product productToBeBought) {
+
+    }
 }
