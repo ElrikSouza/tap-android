@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KMart</string>
+    <string name="edit_label">Editar</string>
+    <string name="etiqueta">Etiqueta</string>
+    <string name="remover">Remover</string>
+    <string name="textview">TextView</string>
 </resources>

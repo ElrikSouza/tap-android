@@ -56,7 +56,13 @@ public class ProductRepository {
             products.add(currentProduct);
         }
 
-        return products;
+        ArrayList temp =  new ArrayList<Product>();
+        temp.add(new Product("0101", "teste", "tttt", "units", 32.4, 423, 23));
+        temp.add(new Product("0101", "teste2", "tttt", "units", 32.4, 423, 23));
+        temp.add(new Product("0101", "teste3", "tttt", "units", 32.4, 423, 23));
+        temp.add(new Product("0101", "teste4", "tttt", "units", 32.4, 423, 23));
+
+        return temp;
     }
 
     public void saveProduct(Product product) {
