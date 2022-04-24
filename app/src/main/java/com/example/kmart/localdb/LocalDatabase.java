@@ -13,6 +13,8 @@ public class LocalDatabase extends SQLiteOpenHelper {
             "description TEXT NOT NULL, measuring_unit TEXT NOT NULL, " +
             "supplier_price REAL NOT NULL, sell_price REAL NOT NULL, quantity_available INTEGER NOT NULL);";
 
+    private static final String CREATE_TRANSACTION_LOG_TABLE = "CREATE TABLE transaction_log(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "transaction_value REAL NOT NULL, transaction_type INTEGER);";
 
 
 
@@ -23,6 +25,7 @@ public class LocalDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqliteDb) {
         sqliteDb.execSQL(CREATE_PRODUCT_TABLE);
+        sqliteDb.execSQL(CREATE_TRANSACTION_LOG_TABLE);
     }
 
     @Override
