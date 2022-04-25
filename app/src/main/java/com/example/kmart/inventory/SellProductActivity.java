@@ -26,6 +26,7 @@ public class SellProductActivity extends AppCompatActivity {
     private void addProductToCart() {
         try {
             String barcode = barcodeField.getText().toString();
+
             int quantity = Integer.parseInt(quantityField.getText().toString());
             Product product = inventory.getOneProductViaBarcode(barcode);
             saleEntries.add(new SaleEntry(product, quantity));
@@ -39,6 +40,18 @@ public class SellProductActivity extends AppCompatActivity {
     }
 
     private void openPaymentActivity() {
+        double totalSell = 0, totalSupplier = 0;
+
+        for (SaleEntry entry: saleEntries) {
+            int quantity = entry.getQuantity();
+            totalSell += entry.getProduct().getSellPrice() * quantity;
+            totalSupplier += entry.getProduct().getSupplierPrice() * quantity;
+        }
+
+        Intent intent = new Intent(this, PaymentActivity.class);
+        intent.putExtra("total_sell", totalSell);
+        intent.putExtra("total_supplier", totalSupplier);
+        startActivity(intent);
     }
 
     private void removeProductFromCart(String barcode) {

@@ -18,21 +18,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/to_be_paid_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:text="Total a ser pago: 3400 R$" />
+
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/finish_sale_total_paid"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Valor Pago"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/to_be_paid_label" />
 
     <Spinner
         android:id="@+id/select_payment_method_spinner"
@@ -40,14 +51,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/finish_sale_total_paid"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/finish_sale_total_paid"
+        app:layout_constraintTop_toBottomOf="@+id/finish_sale_total_paid"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/finish_sale_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

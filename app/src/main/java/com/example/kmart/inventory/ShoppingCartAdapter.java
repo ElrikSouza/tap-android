@@ -29,7 +29,6 @@ public class ShoppingCartAdapter  extends RecyclerView.Adapter<ShoppingCartRowVi
 
     public void setProductList(ArrayList<SaleEntry> newProductList)  {
         this.products = newProductList;
-        Toast.makeText(context, "" + this.products.size(), Toast.LENGTH_SHORT).show();
     }
 
     @NonNull

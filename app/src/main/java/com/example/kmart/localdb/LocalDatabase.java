@@ -16,6 +16,8 @@ public class LocalDatabase extends SQLiteOpenHelper {
     private static final String CREATE_TRANSACTION_LOG_TABLE = "CREATE TABLE transaction_log(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "transaction_value REAL NOT NULL, transaction_type INTEGER);";
 
+    private static final String CREATE_SALE_RECORD_TABLE = "CREATE TABLE sale_record(id INTEGER PRIMARY KEY AUTOINCREMENT, total_paid REAL, payment_method INTEGER, REAL, total_supplier_price REAL, change REAL);";
+
 
 
     public LocalDatabase(Context context) {
@@ -26,6 +28,7 @@ public class LocalDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqliteDb) {
         sqliteDb.execSQL(CREATE_PRODUCT_TABLE);
         sqliteDb.execSQL(CREATE_TRANSACTION_LOG_TABLE);
+        sqliteDb.execSQL(CREATE_SALE_RECORD_TABLE);
     }
 
     @Override
