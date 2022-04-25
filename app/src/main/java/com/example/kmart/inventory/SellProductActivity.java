@@ -1,8 +1,10 @@
 package com.example.kmart.inventory;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,12 +24,12 @@ public class SellProductActivity extends AppCompatActivity {
     private ShoppingCartAdapter adapter;
 
     private void addProductToCart() {
-        String barcode = barcodeField.getText().toString();
-        int quantity = Integer.parseInt(quantityField.getText().toString());
         try {
+            String barcode = barcodeField.getText().toString();
+            int quantity = Integer.parseInt(quantityField.getText().toString());
             Product product = inventory.getOneProductViaBarcode(barcode);
             saleEntries.add(new SaleEntry(product, quantity));
-            this.adapter.notifyDataSetChanged();
+            this.adapter.setProductList(saleEntries);
         } catch (Exception e) {
             Toast.makeText(this, "Produto inexistente", Toast.LENGTH_SHORT).show();
         } finally {
@@ -35,7 +37,14 @@ public class SellProductActivity extends AppCompatActivity {
             quantityField.setText("");
         }
     }
-    private void openPaymentActivity() {}
+
+    private void openPaymentActivity() {
+    }
+
+    private void removeProductFromCart(String barcode) {
+        saleEntries.removeIf(entry -> entry.getProduct().getBarcode().equals(barcode));
+        this.adapter.notifyDataSetChanged();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +58,12 @@ public class SellProductActivity extends AppCompatActivity {
         this.addProductToCartButton = findViewById(R.id.sell_product_add_to_cart_btn);
         this.barcodeField = findViewById(R.id.sell_product_barcode_field);
         this.quantityField = findViewById(R.id.sell_product_quantity);
+
+        this.adapter = new ShoppingCartAdapter(this, this::removeProductFromCart);
+        this.adapter.setProductList(saleEntries);
+        this.shoppingCart.setLayoutManager(new LinearLayoutManager(this));
+        this.shoppingCart.setAdapter(adapter);
+
 
         this.openPaymentActivityButton.setOnClickListener(it -> this.openPaymentActivity());
         this.addProductToCartButton.setOnClickListener(it -> this.addProductToCart());

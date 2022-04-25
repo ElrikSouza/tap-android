@@ -3,6 +3,7 @@ package com.example.kmart.inventory;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -28,6 +29,7 @@ public class ShoppingCartAdapter  extends RecyclerView.Adapter<ShoppingCartRowVi
 
     public void setProductList(ArrayList<SaleEntry> newProductList)  {
         this.products = newProductList;
+        Toast.makeText(context, "" + this.products.size(), Toast.LENGTH_SHORT).show();
     }
 
     @NonNull

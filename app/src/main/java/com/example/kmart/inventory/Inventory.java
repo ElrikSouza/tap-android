@@ -22,7 +22,8 @@ public class Inventory {
     }
 
     public Product getOneProductViaBarcode(String barcode) {
-        return this.productRepository.getProductByBarcode(barcode);
+//        return this.productRepository.getProductByBarcode(barcode);
+        return new Product("cart", "cart", "cart", "unit", 12, 12, 12);
     }
 
     public void buyProduct(Product productToBeBought) {
