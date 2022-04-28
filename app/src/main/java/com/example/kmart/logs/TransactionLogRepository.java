@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.kmart.localdb.LocalDatabase;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class TransactionLogRepository {
@@ -18,5 +19,9 @@ public class TransactionLogRepository {
         String query = String.format(Locale.getDefault(), "INSERT INTO transaction_log(transaction_value, transaction_type) VALUES (%f, %d);", transactionLog.getTransactionValue(), transactionLog.getTransactionType());
 
         this.database.execSQL(query);
+    }
+
+    public ArrayList<TransactionLog> getAllLogs() {
+        return null;
     }
 }
