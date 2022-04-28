@@ -9,7 +9,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kmart.R;
-import com.example.kmart.products.ProductAdapter;
 
 import java.util.ArrayList;
 import java.util.Locale;
