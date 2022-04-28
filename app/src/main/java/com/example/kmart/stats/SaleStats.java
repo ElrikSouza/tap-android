@@ -46,4 +46,16 @@ public class SaleStats {
     public double getAverageChangeValue() {
         return averageChangeValue;
     }
+
+    public double getAveragePaymentInCash() {
+        return totalRevenueFromCash / numOfPaymentsInCash;
+    }
+
+    public double getAveragePaymentInDebit() {
+        return totalRevenueFromDebit / numOfPaymentsInDebit;
+    }
+
+    public double getAveragePaymentInCredit() {
+        return totalRevenueFromCredit / numOfPaymentsInCredit;
+    }
 }

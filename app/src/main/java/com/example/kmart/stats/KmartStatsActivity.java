@@ -25,6 +25,25 @@ public class KmartStatsActivity extends AppCompatActivity {
         profitCalculationLabel.setText(profitCalculationText);
     }
 
+    private void displaySalesBreakdown(SaleStats saleStats) {
+        TextView numOfPaymentsInCashLabel = findViewById(R.id.cash_total);
+        TextView cashAvgPaymentLabel = findViewById(R.id.cash_avg_val);
+
+        TextView numOfPaymentsInDebitLabel = findViewById(R.id.debit_total);
+        TextView debitAvgPaymentLabel = findViewById(R.id.debit_avg_val);
+
+        TextView numOfPaymentsInCreditLabel = findViewById(R.id.credit_total);
+        TextView creditAvgPaymentLabel = findViewById(R.id.credit_avg_val);
+
+        numOfPaymentsInCashLabel.setText(String.format(Locale.getDefault(), "Numero total de transações: %d", saleStats.getNumOfPaymentsInCash()));
+        numOfPaymentsInDebitLabel.setText(String.format(Locale.getDefault(), "Numero total de transações: %d", saleStats.getNumOfPaymentsInDebit()));
+        numOfPaymentsInCreditLabel.setText(String.format(Locale.getDefault(), "Numero total de transações: %d", saleStats.getNumOfPaymentsInCredit()));
+
+        cashAvgPaymentLabel.setText(String.format(Locale.getDefault(), "Valor médio da compra: R$ %.2f", saleStats.getAveragePaymentInCash()));
+        debitAvgPaymentLabel.setText(String.format(Locale.getDefault(), "Valor médio da compra: R$ %.2f", saleStats.getAveragePaymentInDebit()));
+        creditAvgPaymentLabel.setText(String.format(Locale.getDefault(), "Valor médio da compra: R$ %.2f", saleStats.getAveragePaymentInCredit()));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +51,9 @@ public class KmartStatsActivity extends AppCompatActivity {
 
         StatsService statsService = new StatsService(this);
         ProfitStats profitStats = statsService.getProfitBreakdown();
+        SaleStats saleStats = statsService.getSalesBreakdown();
 
         displayProfitBreakdown(profitStats);
+        displaySalesBreakdown(saleStats);
     }
 }

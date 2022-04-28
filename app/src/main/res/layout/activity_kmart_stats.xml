@@ -7,20 +7,116 @@
     tools:context=".stats.KmartStatsActivity">
 
     <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Compras em Credito"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/value_in_produts_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/debit_total" />
+
+    <TextView
+        android:id="@+id/credit_avg_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        tools:text="Valor Medio: R$ 786 " />
+
+    <TextView
+        android:id="@+id/credit_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/debit_avg_val"
+        app:layout_constraintTop_toBottomOf="@+id/credit_avg_val"
+        tools:text="Numero total 500" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Compras em Debito"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/value_in_produts_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/cash_total" />
+
+    <TextView
+        android:id="@+id/debit_avg_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:text="Valor Medio: R$ 786 " />
+
+    <TextView
+        android:id="@+id/debit_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/debit_avg_val"
+        app:layout_constraintTop_toBottomOf="@+id/debit_avg_val"
+        tools:text="Numero total 500" />
+
+    <TextView
         android:id="@+id/value_in_produts_lbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="60dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Valor em produtos: 18323232 R$" />
 
     <TextView
         android:id="@+id/profit_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="40dp"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/value_in_produts_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/value_in_produts_lbl"
+        tools:text="Lucro: 393993 R$" />
 
     <TextView
         android:id="@+id/profit_calculation_lbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/profit_label"
+        app:layout_constraintTop_toBottomOf="@+id/profit_label"
+        tools:text="Calculo: (394992 - 999) R$" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Compras em dinheiro"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/value_in_produts_lbl"
+        app:layout_constraintTop_toBottomOf="@+id/profit_calculation_lbl" />
+
+    <TextView
+        android:id="@+id/cash_total"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/cash_avg_val"
+        app:layout_constraintTop_toBottomOf="@+id/cash_avg_val"
+        tools:text="Numero total 500" />
+
+    <TextView
+        android:id="@+id/cash_avg_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:text="Valor Medio: R$ 786 " />
 </androidx.constraintlayout.widget.ConstraintLayout>

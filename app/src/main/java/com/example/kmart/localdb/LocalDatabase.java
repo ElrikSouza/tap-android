@@ -14,7 +14,7 @@ public class LocalDatabase extends SQLiteOpenHelper {
             "supplier_price REAL NOT NULL, sell_price REAL NOT NULL, quantity_available INTEGER NOT NULL);";
 
     private static final String CREATE_TRANSACTION_LOG_TABLE = "CREATE TABLE transaction_log(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "transaction_value REAL NOT NULL, transaction_type INTEGER);";
+            "transaction_value REAL NOT NULL, transaction_type INTEGER, timestamp INTEGER);";
 
     private static final String CREATE_SALE_RECORD_TABLE = "CREATE TABLE sale_record(id INTEGER PRIMARY KEY AUTOINCREMENT, total_paid REAL, payment_method INTEGER, REAL, total_supplier_price REAL, change REAL);";
 

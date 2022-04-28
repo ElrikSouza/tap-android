@@ -24,7 +24,7 @@ public class ShoppingCartAdapter  extends RecyclerView.Adapter<ShoppingCartRowVi
     public ShoppingCartAdapter(Context context, Consumer<String> onRemoveProductFromCart) {
         this.onRemoveProductFromCart = onRemoveProductFromCart;
         this.context = context;
-        this.products = new ArrayList<SaleEntry>();
+        this.products = new ArrayList<>();
     }
 
     public void setProductList(ArrayList<SaleEntry> newProductList)  {
