@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KMart">
         <activity
+            android:name=".MainMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".logs.TransactionLogListActivity"
             android:exported="false" />
         <activity

@@ -12,13 +12,14 @@ public class TransactionLog {
        this.id = id;
        this.transactionValue = transactionValue;
        this.transactionType = transactionType;
-       this.transactionDate = null;
+       this.transactionDate = new Date();
     }
 
-    public TransactionLog(double transactionValue, int transactionType) {
+    public TransactionLog(double transactionValue, int transactionType, Date transantionDate) {
         this.id = -1;
         this.transactionValue = transactionValue;
         this.transactionType= transactionType;
+        this.transactionDate = transantionDate;
     }
 
     public int getId() {

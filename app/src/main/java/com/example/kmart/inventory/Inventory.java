@@ -10,6 +10,7 @@ import com.example.kmart.products.Product;
 import com.example.kmart.products.ProductRepository;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Locale;
 
 public class Inventory {
@@ -27,15 +28,20 @@ public class Inventory {
         return this.productRepository.getAllProducts();
     }
 
-    public Product getOneProductViaBarcode(String barcode) {
-//        return this.productRepository.getProductByBarcode(barcode);
-        return new Product("cart", "cart", "cart", "unit", 12, 12, 12);
+    public Product getOneProductViaBarcode(String barcode) throws Exception {
+        Product product = this.productRepository.getProductByBarcode(barcode);
+
+        if (product == null) {
+            throw new Exception("Produto nao encontrado");
+        }
+
+        return product;
     }
 
     public void buyProduct(Product productToBeBought) {
         productRepository.saveProduct(productToBeBought);
 
-        TransactionLog log = new TransactionLog(-1 * productToBeBought.getQuantityAvailable() * productToBeBought.getSellPrice(), 0);
+        TransactionLog log = new TransactionLog(-1 * productToBeBought.getQuantityAvailable() * productToBeBought.getSellPrice(), 0, new Date());
         transactionLogRepository.saveTransactionLog(log);
     }
 
@@ -46,7 +52,7 @@ public class Inventory {
     }
 
     public void sellProduct(SaleRecord saleRecord) {
-        TransactionLog log = new TransactionLog(saleRecord.getTotalPaid() - saleRecord.getChange(), 1);
+        TransactionLog log = new TransactionLog(saleRecord.getTotalPaid() - saleRecord.getChange(), 1, new Date());
         transactionLogRepository.saveTransactionLog(log);
         this.saveSaleRecord(saleRecord);
     }

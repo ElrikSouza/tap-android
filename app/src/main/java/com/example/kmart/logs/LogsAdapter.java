@@ -50,9 +50,9 @@ public class LogsAdapter extends RecyclerView.Adapter<LogsViewHolder> {
          transactionType = "Venda";
       }
 
-      holder.transactionValue.setText(transactionType);
+      holder.transactionType.setText(transactionType);
       holder.transactionTimeStamp.setText(log.getTransactionDate().toString());
-      holder.transactionType.setText(String.format(Locale.getDefault(), "Valor: R$ %.2f", log.getTransactionValue()));
+      holder.transactionValue.setText(String.format(Locale.getDefault(), "Valor: R$ %.2f", log.getTransactionValue()));
    }
 
    @Override

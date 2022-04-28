@@ -3,7 +3,6 @@ package com.example.kmart.products;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.widget.Toast;
 
 import com.example.kmart.localdb.LocalDatabase;
 
@@ -47,7 +46,7 @@ public class ProductRepository {
     }
 
     public ArrayList<Product> getAllProducts() {
-        ArrayList<Product> products = new ArrayList();
+        ArrayList<Product> products = new ArrayList<>();
 
         Cursor cursor = this.database.rawQuery(GET_ALL, new String[]{});
 
@@ -56,17 +55,11 @@ public class ProductRepository {
             products.add(currentProduct);
         }
 
-        ArrayList temp =  new ArrayList<Product>();
-        temp.add(new Product("0101", "teste", "tttt", "units", 32.4, 423, 23));
-        temp.add(new Product("0101", "teste2", "tttt", "units", 32.4, 423, 23));
-        temp.add(new Product("0101", "teste3", "tttt", "units", 32.4, 423, 23));
-        temp.add(new Product("0101", "teste4", "tttt", "units", 32.4, 423, 23));
-
-        return temp;
+        return products;
     }
 
     public void saveProduct(Product product) {
-        String query = String.format(Locale.getDefault(),"INSERT INTO product VALUES (%s, %s, %s, %s, %f, %f, %d);",
+        String query = String.format(Locale.getDefault(),"INSERT INTO product VALUES ('%s', '%s', '%s', '%s', %f, %f, %d);",
                         product.getBarcode(), product.getName(), product.getDescription(), product.getMeasuringUnit(), product.getSupplierPrice(), product.getSellPrice(), product.getQuantityAvailable());
 
         this.database.execSQL(query);
