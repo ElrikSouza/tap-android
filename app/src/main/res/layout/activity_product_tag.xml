@@ -6,4 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".inventory.ProductTagActivity">
 
+    <TextView
+        android:id="@+id/tag_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Geladeira" />
+
+    <TextView
+        android:id="@+id/tag_barcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tag_name"
+        app:layout_constraintTop_toBottomOf="@+id/tag_name"
+        tools:text="347274 47234 90" />
+
+    <TextView
+        android:id="@+id/tag_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tag_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tag_name"
+        tools:text="R$ 3999" />
 </androidx.constraintlayout.widget.ConstraintLayout>

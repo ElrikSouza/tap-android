@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kmart.R;
 import com.example.kmart.inventory.EditProductActivity;
+import com.example.kmart.inventory.ProductTagActivity;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -52,7 +53,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
         this.context.startActivity(intent);
     }
 
-    private void openTagActivity(String barcode) {}
+    private void openTagActivity(String barcode) {
+        Intent intent =  new Intent(context, ProductTagActivity.class);
+        intent.putExtra("barcode", barcode);
+        this.context.startActivity(intent);
+    }
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
