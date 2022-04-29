@@ -5,11 +5,13 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/activity_buy_product.xml" value="0.35052083333333334" />
+        <entry key="app/src/main/res/layout/activity_edit_product.xml" value="0.67" />
         <entry key="app/src/main/res/layout/activity_inventory_product_list.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_kmart_stats.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/activity_kmart_stats.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main_menu.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/activity_main_menu.xml" value="0.46926536731634183" />
         <entry key="app/src/main/res/layout/activity_payment.xml" value="0.29347826086956524" />
+        <entry key="app/src/main/res/layout/activity_product_tag.xml" value="0.14444444444444443" />
         <entry key="app/src/main/res/layout/activity_sell_product.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/activity_transaction_log_list.xml" value="0.20314083080040526" />
         <entry key="app/src/main/res/layout/log_entry_layout.xml" value="0.5" />

@@ -18,7 +18,7 @@ public class KmartStatsActivity extends AppCompatActivity {
 
         String totalValueInProductsText = String.format(Locale.getDefault(), "Valor total em produtos: %.2f R$", profitStats.getTotalValueInProducts());
         String profitText = String.format(Locale.getDefault(), "Lucro: %.2f R$", profitStats.getProfit());
-        String profitCalculationText = String.format(Locale.getDefault(), "Calculado de (%.2f - %.2f)", profitStats.getTotalSaleRevenue(), profitStats.getTotalSupplierCost());
+        String profitCalculationText = String.format(Locale.getDefault(), "Calculado de (%.2f - %.2f)", profitStats.getTotalSaleRevenue(), profitStats.getTotalValueInProducts());
 
         totalValueInProductsLabel.setText(totalValueInProductsText);
         profitLabel.setText(profitText);
@@ -35,6 +35,8 @@ public class KmartStatsActivity extends AppCompatActivity {
         TextView numOfPaymentsInCreditLabel = findViewById(R.id.credit_total);
         TextView creditAvgPaymentLabel = findViewById(R.id.credit_avg_val);
 
+        TextView changeLabel = findViewById(R.id.stats_change_val);
+
         numOfPaymentsInCashLabel.setText(String.format(Locale.getDefault(), "Numero total de transações: %d", saleStats.getNumOfPaymentsInCash()));
         numOfPaymentsInDebitLabel.setText(String.format(Locale.getDefault(), "Numero total de transações: %d", saleStats.getNumOfPaymentsInDebit()));
         numOfPaymentsInCreditLabel.setText(String.format(Locale.getDefault(), "Numero total de transações: %d", saleStats.getNumOfPaymentsInCredit()));
@@ -42,6 +44,8 @@ public class KmartStatsActivity extends AppCompatActivity {
         cashAvgPaymentLabel.setText(String.format(Locale.getDefault(), "Valor médio da compra: R$ %.2f", saleStats.getAveragePaymentInCash()));
         debitAvgPaymentLabel.setText(String.format(Locale.getDefault(), "Valor médio da compra: R$ %.2f", saleStats.getAveragePaymentInDebit()));
         creditAvgPaymentLabel.setText(String.format(Locale.getDefault(), "Valor médio da compra: R$ %.2f", saleStats.getAveragePaymentInCredit()));
+
+        changeLabel.setText(String.format(Locale.getDefault(), "Valor médio do troco: R$ %.2f", saleStats.getAverageChangeValue()));
     }
 
     @Override

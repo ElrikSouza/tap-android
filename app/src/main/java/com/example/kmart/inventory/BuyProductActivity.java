@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kmart.R;
@@ -32,7 +31,7 @@ public class BuyProductActivity extends AppCompatActivity {
         double supplierPrice = Double.parseDouble(productSupplierPrice.getText().toString());
         int quantity = Integer.parseInt(productQuantity.getText().toString());
 
-        return new Product(barcode, name, description, measuringUnit, sellPrice, supplierPrice, quantity);
+        return new Product(barcode, name, description, measuringUnit, supplierPrice, sellPrice, quantity);
     }
 
     private void goBackToMainInventoryScree() {
@@ -60,7 +59,7 @@ public class BuyProductActivity extends AppCompatActivity {
         this.productSupplierPrice= findViewById(R.id.buy_product_form_supplier_price);
         this.productQuantity = findViewById(R.id.buy_product_form_quantity);
         this.productMeasuringUnit = findViewById(R.id.buy_product_form_measuring_unit);
-        Button confirmPurchaseButton = findViewById(R.id.confirm_buy_prodcut);
+        Button confirmPurchaseButton = findViewById(R.id.confirm_edit_prod);
 
         confirmPurchaseButton.setOnClickListener(it -> confirmProductPurchase());
     }

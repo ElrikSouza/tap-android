@@ -59,7 +59,7 @@
         tools:text="x99 unidades" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/editprodbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -68,20 +68,20 @@
         app:layout_constraintTop_toBottomOf="@+id/product_sell_price" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/delete_prod_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="@string/remover"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintStart_toEndOf="@+id/editprodbtn"
+        app:layout_constraintTop_toTopOf="@+id/editprodbtn" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/tag_prod_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="@string/etiqueta"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintStart_toEndOf="@+id/delete_prod_btn"
+        app:layout_constraintTop_toTopOf="@+id/delete_prod_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

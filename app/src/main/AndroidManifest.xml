@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KMart">
         <activity
+            android:name=".inventory.EditProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".inventory.ProductTagActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainMenuActivity"
             android:exported="false" />
         <activity

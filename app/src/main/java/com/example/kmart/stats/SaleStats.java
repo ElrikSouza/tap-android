@@ -48,14 +48,26 @@ public class SaleStats {
     }
 
     public double getAveragePaymentInCash() {
+        if (numOfPaymentsInCash == 0) {
+            return 0;
+        }
+
         return totalRevenueFromCash / numOfPaymentsInCash;
     }
 
     public double getAveragePaymentInDebit() {
+        if (numOfPaymentsInDebit == 0) {
+            return 0;
+        }
+
         return totalRevenueFromDebit / numOfPaymentsInDebit;
     }
 
     public double getAveragePaymentInCredit() {
+        if (numOfPaymentsInCredit == 0) {
+            return 0;
+        }
+
         return totalRevenueFromCredit / numOfPaymentsInCredit;
     }
 }

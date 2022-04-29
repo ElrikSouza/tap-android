@@ -73,6 +73,7 @@ public class ProductRepository {
     }
 
     public void deleteProductByBarcode(String barcode) {
+        System.out.println(barcode);
         String query = String.format(Locale.getDefault(), "DELETE FROM product WHERE barcode='%s';", barcode);
 
         this.database.execSQL(query);
