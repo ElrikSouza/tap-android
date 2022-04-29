@@ -19,6 +19,9 @@ public class LocalDatabase extends SQLiteOpenHelper {
     private static final String CREATE_SALE_RECORD_TABLE = "CREATE TABLE sale_record(id INTEGER PRIMARY KEY AUTOINCREMENT, total_paid REAL, payment_method INTEGER, REAL, total_supplier_price REAL, change REAL);";
 
 
+    private static final String CREATE_USER_ACCOUNT_TABLE = "CREATE TABLE user_account(username TEXT PRIMARY KEY, password TEXT);";
+
+    private static final String CREATE_ADM_USER = "INSERT INTO user_account VALUES ('adm', 'adm')";
 
     public LocalDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -29,6 +32,8 @@ public class LocalDatabase extends SQLiteOpenHelper {
         sqliteDb.execSQL(CREATE_PRODUCT_TABLE);
         sqliteDb.execSQL(CREATE_TRANSACTION_LOG_TABLE);
         sqliteDb.execSQL(CREATE_SALE_RECORD_TABLE);
+        sqliteDb.execSQL(CREATE_USER_ACCOUNT_TABLE);
+        sqliteDb.execSQL(CREATE_ADM_USER);
     }
 
     @Override
